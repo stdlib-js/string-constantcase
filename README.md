@@ -63,7 +63,6 @@ str = constantcase( 'foo_bar' );
 
 <!-- /.usage -->
 
-
 <!-- Package usage examples. -->
 
 <section class="examples">
@@ -97,7 +96,6 @@ out = constantcase( str );
 </section>
 
 <!-- /.examples -->
-
 
 * * *
 
@@ -158,6 +156,24 @@ BEEP_BOOP
 
 <!-- /.cli -->
 
+<!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
+
+<section class="related">
+
+* * *
+
+## See Also
+
+-   [`@stdlib/string/camelcase`][@stdlib/string/camelcase]: convert a string to camel case.
+-   [`@stdlib/string/kebabcase`][@stdlib/string/kebabcase]: convert a string to kebab case.
+-   [`@stdlib/string/snakecase`][@stdlib/string/snakecase]: convert a string to snake case.
+
+</section>
+
+<!-- /.related -->
+
+<!-- Section for all links. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
 
 <section class="main-repo" >
 
@@ -214,6 +230,16 @@ Copyright &copy; 2016-2021. The Stdlib [Authors][stdlib-authors].
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/string-constantcase/main/LICENSE
 
 [standard-streams]: https://en.wikipedia.org/wiki/Standard_streams
+
+<!-- <related-links> -->
+
+[@stdlib/string/camelcase]: https://github.com/stdlib-js/string-camelcase
+
+[@stdlib/string/kebabcase]: https://github.com/stdlib-js/string-kebabcase
+
+[@stdlib/string/snakecase]: https://github.com/stdlib-js/string-snakecase
+
+<!-- </related-links> -->
 
 </section>
 
