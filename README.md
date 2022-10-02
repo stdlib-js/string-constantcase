@@ -22,18 +22,34 @@ limitations under the License.
 
 [![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
 
-> Returns a string converted to a constant case.
+> Convert a string to constant case.
 
 <!-- Package usage documentation. -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/string-constantcase
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import constantcase from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-constantcase@deno/mod.js';
+var constantcase = require( '@stdlib/string-constantcase' );
 ```
 
 #### constantcase( str )
@@ -62,7 +78,7 @@ str = constantcase( 'foo_bar' );
 ## Examples
 
 ```javascript
-import constantcase from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-constantcase@deno/mod.js';
+var constantcase = require( '@stdlib/string-constantcase' );
 
 var str = 'Hello World!';
 var out = constantcase( str );
@@ -89,7 +105,104 @@ out = constantcase( str );
 
 <!-- /.examples -->
 
+* * *
 
+<section class="cli">
+
+## CLI
+
+<section class="installation">
+
+## Installation
+
+To use the module as a general utility, install the module globally
+
+```bash
+npm install -g @stdlib/string-constantcase
+```
+
+</section>
+
+<!-- CLI usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```text
+Usage: constantcase [options] [<string>]
+
+Options:
+
+  -h,    --help                Print this message.
+  -V,    --version             Print the package version.
+         --split sep           Delimiter for stdin data. Default: '/\\r?\\n/'.
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- CLI usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+### Notes
+
+-   If the split separator is a [regular expression][mdn-regexp], ensure that the `split` option is either properly escaped or enclosed in quotes.
+
+    ```bash
+    # Not escaped...
+    $ echo -n $'beEp booP\nisMobile' | constantcase --split /\r?\n/
+
+    # Escaped...
+    $ echo -n $'beEp booP\nisMobile' | constantcase --split /\\r?\\n/
+    ```
+
+-   The implementation ignores trailing delimiters.
+
+</section>
+
+<!-- /.notes -->
+
+<section class="examples">
+
+### Examples
+
+```bash
+$ constantcase 'hello world'
+HELLO_WORLD
+```
+
+To use as a [standard stream][standard-streams],
+
+```bash
+$ echo -n 'beEp booP' | constantcase
+BEEP_BOOP
+```
+
+To use as a [standard stream][standard-streams],
+
+```bash
+$ echo -n 'isMobile' | constantcase
+IS_MOBILE
+```
+
+By default, when used as a [standard stream][standard-streams], the implementation assumes newline-delimited data. To specify an alternative delimiter, set the `split` option.
+
+```bash
+$ echo -n 'beep_boop\tisMobile' | constantcase --split '\t'
+BEEP_BOOP
+IS_MOBILE
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.cli -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -117,7 +230,7 @@ out = constantcase( str );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -183,13 +296,13 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/string/camelcase]: https://github.com/stdlib-js/string-camelcase/tree/deno
+[@stdlib/string/camelcase]: https://github.com/stdlib-js/string-camelcase
 
-[@stdlib/string/kebabcase]: https://github.com/stdlib-js/string-kebabcase/tree/deno
+[@stdlib/string/kebabcase]: https://github.com/stdlib-js/string-kebabcase
 
-[@stdlib/string/pascalcase]: https://github.com/stdlib-js/string-pascalcase/tree/deno
+[@stdlib/string/pascalcase]: https://github.com/stdlib-js/string-pascalcase
 
-[@stdlib/string/snakecase]: https://github.com/stdlib-js/string-snakecase/tree/deno
+[@stdlib/string/snakecase]: https://github.com/stdlib-js/string-snakecase
 
 <!-- </related-links> -->
 
