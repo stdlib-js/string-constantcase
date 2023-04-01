@@ -26,19 +26,91 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
+<section class="installation">
 
+## Installation
 
+```bash
+npm install @stdlib/string-constantcase
+```
 
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+-   To use as a general utility for the command line, install the corresponding [CLI package][cli-section] globally.
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
+
+<section class="usage">
+
+## Usage
+
+```javascript
+var constantcase = require( '@stdlib/string-constantcase' );
+```
+
+#### constantcase( str )
+
+Converts a string to constant case.
+
+```javascript
+var str = constantcase( 'foo bar' );
+// returns 'FOO_BAR'
+
+str = constantcase( 'foo bar baz' );
+// returns 'FOO_BAR_BAZ'
+
+str = constantcase( 'foo_bar' );
+// returns 'FOO_BAR'
+```
+
+</section>
+
+<!-- /.usage -->
 
 <!-- Package usage examples. -->
 
+<section class="examples">
 
+## Examples
 
+```javascript
+var constantcase = require( '@stdlib/string-constantcase' );
 
+var str = 'Hello World!';
+var out = constantcase( str );
+// returns 'HELLO_WORLD'
+
+str = 'I am a tiny little teapot';
+out = constantcase( str );
+// returns 'I_AM_A_TINY_LITTLE_TEAPOT'
+
+str = 'with big problems';
+out = constantcase( str );
+// returns 'WITH_BIG_PROBLEMS'
+
+str = 'To be, or not to be: that is the question.';
+out = constantcase( str );
+// returns 'TO_BE_OR_NOT_TO_BE_THAT_IS_THE_QUESTION'
+
+str = 'isMobile';
+out = constantcase( str );
+// returns 'IS_MOBILE'
+```
+
+</section>
+
+<!-- /.examples -->
+
+* * *
 
 <section class="cli">
 
-
+## CLI
 
 <section class="installation">
 
@@ -56,7 +128,7 @@ npm install -g @stdlib/string-constantcase-cli
 
 <section class="usage">
 
-## Usage
+### Usage
 
 ```text
 Usage: constantcase [options] [<string>]
@@ -74,11 +146,29 @@ Options:
 
 <!-- CLI usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
 
+<section class="notes">
 
+### Notes
+
+-   If the split separator is a [regular expression][mdn-regexp], ensure that the `split` option is either properly escaped or enclosed in quotes.
+
+    ```bash
+    # Not escaped...
+    $ echo -n $'beEp booP\nisMobile' | constantcase --split /\r?\n/
+
+    # Escaped...
+    $ echo -n $'beEp booP\nisMobile' | constantcase --split /\\r?\\n/
+    ```
+
+-   The implementation ignores trailing delimiters.
+
+</section>
+
+<!-- /.notes -->
 
 <section class="examples">
 
-## Examples
+### Examples
 
 ```bash
 $ constantcase 'hello world'
@@ -119,9 +209,10 @@ IS_MOBILE
 
 <section class="related">
 
+* * *
+
 ## See Also
 
--   <span class="package-name">[`@stdlib/string-constantcase`][@stdlib/string-constantcase]</span><span class="delimiter">: </span><span class="description">convert a string to constant case.</span>
 -   <span class="package-name">[`@stdlib/string-camelcase`][@stdlib/string/camelcase]</span><span class="delimiter">: </span><span class="description">convert a string to camel case.</span>
 -   <span class="package-name">[`@stdlib/string-kebabcase`][@stdlib/string/kebabcase]</span><span class="delimiter">: </span><span class="description">convert a string to kebab case.</span>
 -   <span class="package-name">[`@stdlib/string-pascalcase`][@stdlib/string/pascalcase]</span><span class="delimiter">: </span><span class="description">convert a string to Pascal case.</span>
@@ -144,7 +235,7 @@ This package is part of [stdlib][stdlib], a standard library for JavaScript and 
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
-### Community
+#### Community
 
 [![Chat][chat-image]][chat-url]
 
@@ -167,8 +258,8 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 <section class="links">
 
-[npm-image]: http://img.shields.io/npm/v/@stdlib/string-constantcase-cli.svg
-[npm-url]: https://npmjs.org/package/@stdlib/string-constantcase-cli
+[npm-image]: http://img.shields.io/npm/v/@stdlib/string-constantcase.svg
+[npm-url]: https://npmjs.org/package/@stdlib/string-constantcase
 
 [test-image]: https://github.com/stdlib-js/string-constantcase/actions/workflows/test.yml/badge.svg?branch=main
 [test-url]: https://github.com/stdlib-js/string-constantcase/actions/workflows/test.yml?query=branch:main
@@ -184,7 +275,7 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 -->
 
 [chat-image]: https://img.shields.io/gitter/room/stdlib-js/stdlib.svg
-[chat-url]: https://gitter.im/stdlib-js/stdlib/
+[chat-url]: https://app.gitter.im/#/room/#stdlib-js_stdlib:gitter.im
 
 [stdlib]: https://github.com/stdlib-js/stdlib
 
