@@ -44,7 +44,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import constantcase from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-constantcase@esm/index.mjs';
+import constantcase from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-constantcase@v0.2.0-esm/index.mjs';
 ```
 
 #### constantcase( str )
@@ -78,7 +78,7 @@ str = constantcase( 'foo_bar' );
 <body>
 <script type="module">
 
-import constantcase from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-constantcase@esm/index.mjs';
+import constantcase from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-constantcase@v0.2.0-esm/index.mjs';
 
 var str = 'Hello World!';
 var out = constantcase( str );
