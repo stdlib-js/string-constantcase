@@ -44,6 +44,11 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import constantcase from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-constantcase@esm/index.mjs';
+```
+The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/string-constantcase/tags). For example,
+
+```javascript
 import constantcase from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-constantcase@v0.2.3-esm/index.mjs';
 ```
 
@@ -78,7 +83,7 @@ str = constantcase( 'foo_bar' );
 <body>
 <script type="module">
 
-import constantcase from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-constantcase@v0.2.3-esm/index.mjs';
+import constantcase from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-constantcase@esm/index.mjs';
 
 var str = 'Hello World!';
 var out = constantcase( str );
